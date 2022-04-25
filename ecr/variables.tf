@@ -1,2 +1,1 @@
 variable "app_name" {}
-
