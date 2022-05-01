@@ -1,8 +1,13 @@
 # aws_apprunner_terraform
 
-## Initial set up
+## Set up
 ```bash
+$ cp .env.default .env
+$ docker-compose build
+```
+
 ## Create S3 bucket to store tfstate file
+```
 $ docker-compose run --rm \
     aws s3api create-bucket \
     --bucket terraform-tfstate \
@@ -12,11 +17,15 @@ $ docker-compose run --rm \
     aws s3api put-bucket-versioning \
     --bucket terraform-tfstate \
     --versioning-configuration Status=Enabled
-
-$ docker-compose build
 ```
 
-## Create each resource
+## Create each resources
 ```bash
+# ECR
+$ docker-compose run --rm -w /app/terraform/ecr terraform init
+$ docker-compose run --rm -w /app/terraform/ecr terraform apply
 
+# IAM
+$ docker-compose run --rm -w /app/terraform/iam terraform init
+$ docker-compose run --rm -w /app/terraform/iam terraform apply
 ```
