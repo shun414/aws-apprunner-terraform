@@ -29,6 +29,10 @@ $ docker-compose run --rm -w /app/terraform/ecr terraform apply
 $ docker-compose run --rm -w /app/terraform/iam terraform init
 $ docker-compose run --rm -w /app/terraform/iam terraform apply
 
+# VPC
+$ docker-compose run --rm -w /app/terraform/vpc terraform init
+$ docker-compose run --rm -w /app/terraform/vpc terraform apply
+
 # AppRunner
 $ docker-compose run --rm -w /app/terraform/app_runner terraform init
 $ docker-compose run --rm -w /app/terraform/app_runner terraform apply
