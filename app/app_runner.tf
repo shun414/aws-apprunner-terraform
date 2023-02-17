@@ -3,14 +3,14 @@ resource "aws_apprunner_service" "this" {
 
   source_configuration {
     authentication_configuration {
-      access_role_arn = data.terraform_remote_state.iam.outputs.iam_role_app_runner_arn
+      access_role_arn = module.aws_iam_role_app_runner.arn
     }
 
     image_repository {
       image_configuration {
         port = var.app_listen_port
       }
-      image_identifier = "${data.terraform_remote_state.outputs.ecr_repository_url}:latest"
+      image_identifier = "${aws_ecr_repository.this.url}:latest"
       image_repository_type = "ECR"
     }
 
