@@ -21,19 +21,7 @@ $ docker-compose run --rm \
 
 ## Create each resources
 ```bash
-# ECR
-$ docker-compose run --rm -w /app/terraform/ecr terraform init
-$ docker-compose run --rm -w /app/terraform/ecr terraform apply
-
-# IAM
-$ docker-compose run --rm -w /app/terraform/iam terraform init
-$ docker-compose run --rm -w /app/terraform/iam terraform apply
-
-# VPC
-$ docker-compose run --rm -w /app/terraform/vpc terraform init
-$ docker-compose run --rm -w /app/terraform/vpc terraform apply
-
-# AppRunner
-$ docker-compose run --rm -w /app/terraform/app_runner terraform init
-$ docker-compose run --rm -w /app/terraform/app_runner terraform apply
-```
+```bash
+$ docker-compose run --rm -w /app terraform init
+$ docker-compose run --rm -w /app terraform apply
+``````
