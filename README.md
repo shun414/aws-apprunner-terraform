@@ -22,5 +22,6 @@ $ docker-compose run --rm \
 ## Create each resources
 ```bash
 $ docker-compose run --rm -w /app terraform init
+$ docker-compose run --rm -w /app terraform plan
 $ docker-compose run --rm -w /app terraform apply
 ``````
