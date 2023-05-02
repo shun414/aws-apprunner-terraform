@@ -1,4 +1,4 @@
-# aws_apprunner_terraform
+# aws-apprunner-terraform
 
 ## Set up
 ```bash
