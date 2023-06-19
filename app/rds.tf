@@ -5,7 +5,7 @@ resource "aws_rds_cluster" "this" {
   availability_zones      = ["ap-northeast-1a", "ap-northeast-1b"]
   database_name           = "apprunner-test"
   master_username         = "root"
-  master_password         = "<MY_SECRET_PASSWORD>"
+  master_password         = var.rds_master_password["value"]
   backup_retention_period = 5
   preferred_backup_window = "07:00-09:00"
 }
