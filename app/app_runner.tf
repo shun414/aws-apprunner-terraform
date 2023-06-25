@@ -15,8 +15,8 @@ resource "aws_apprunner_service" "this" {
     }
 
     instance_configuration {
-      cpu     = 512
-      memorty = 1024
+      cpu     = 256
+      memorty = 512
     }
 
     auto_deployments_enabled = true
