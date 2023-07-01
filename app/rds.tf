@@ -1,5 +1,5 @@
 resource "aws_rds_cluster" "this" {
-  cluster_identifier      = "app-runner-test"
+  cluster_identifier      = "app-test"
   engine                  = "aurora"
   engine_version          = "8.0"
   availability_zones      = ["ap-northeast-1a", "ap-northeast-1b"]
@@ -12,7 +12,7 @@ resource "aws_rds_cluster" "this" {
 
 resource "aws_rds_cluster_instance" "aurora_instances" {
   count                = 2
-  identifier           = "app-runner-test-${count.index}"
+  identifier           = "app-test-${count.index}"
   cluster_identifier   = aws_rds_cluster.aurora_cluster.id
   instance_class       = "db.t3.small"
   engine               = "aurora"
